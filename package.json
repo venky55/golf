@@ -7,8 +7,8 @@
     "server": "cd backend && npm i && node server.js",
     "front": "webpack-dev-server --inline -d --colors --display-error-details --display-cached --port 3000",
     "start": "npm run front",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "ng build --aot -prod"
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "repository": {
     "type": "git",
