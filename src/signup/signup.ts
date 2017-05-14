@@ -15,14 +15,15 @@ export class Signup {
   constructor(public router: Router, public http: Http) {
   }
 
-  signup(event, username, password) {
+  signup(event, name,email, password) {
     event.preventDefault();
-    let body = JSON.stringify({ username, password });
-    this.http.post('http://localhost:3001/users', body, { headers: contentHeaders })
+    let body = JSON.stringify({ name,email, password });
+    this.http.post('https://golf-api-test.azurewebsites.net/api/v1/auth/register', body, { headers: contentHeaders })
       .subscribe(
         response => {
-          localStorage.setItem('id_token', response.json().id_token);
+          localStorage.setItem('id_token', response.json().authToken);
           this.router.navigate(['home']);
+          console.log(response.json().authToken);
         },
         error => {
           alert(error.text());

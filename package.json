@@ -6,8 +6,9 @@
   "scripts": {
     "server": "cd backend && npm i && node server.js",
     "front": "webpack-dev-server --inline -d --colors --display-error-details --display-cached --port 3000",
-    "start": "npm run front",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "ng build --aot -prod"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "angular2-jwt": "0.1.23",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "express": "^4.15.2",
     "jwt-decode": "^2.0.1",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "~0.6.25"
